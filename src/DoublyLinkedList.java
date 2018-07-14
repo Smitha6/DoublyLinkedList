@@ -161,12 +161,15 @@ public class DoublyLinkedList<AnyType> extends HW4_AbstractClass<AnyType>{
 	public void removeFromPosition(int pos){
 		Node<AnyType> walker = head;
 
+		if(length == 0)
+			return;
+
 		//if pos is in range
 		if (pos < 1 || pos > length + 1)
 			return;
 
 		//get to pos
-		for(int i = 0; i < pos-1; i++){
+		for(int i = 0; i < pos; i++){
 			walker = walker.next;
 		}
 
