@@ -107,6 +107,7 @@ public class DoublyLinkedList<AnyType> extends HW4_AbstractClass<AnyType>{
 
 
     //---To Do---
+	//Adds node to back of list
 	public void addToBack(AnyType x){
 		Node<AnyType> walker = head;
 		Node<AnyType> n = new Node<>(x,null,null);
@@ -122,10 +123,9 @@ public class DoublyLinkedList<AnyType> extends HW4_AbstractClass<AnyType>{
 		tail.prev = n;
 
 		length++;
-
-
 	}
 
+	//Removes node from front of list
 	public void removeFromFront(){
     	if(length <= 0)
     		return;
@@ -137,6 +137,7 @@ public class DoublyLinkedList<AnyType> extends HW4_AbstractClass<AnyType>{
 
 	}
 
+	//Removes node from back of list
 	public void removeFromBack(){
 		if(length <= 0)
 			return;
@@ -148,19 +149,23 @@ public class DoublyLinkedList<AnyType> extends HW4_AbstractClass<AnyType>{
 
 	}
 
+	//Returns the data at front of list
 	public AnyType peekFront(){
 		Node<AnyType> n = head.next;
 		return n.data;
 	}
 
+	//Returns the data at back of list
 	public AnyType peekBack(){
 		Node<AnyType> n = tail.prev;
 		return n.data;
 	}
 
+	//Removes node from a position in list
 	public void removeFromPosition(int pos){
 		Node<AnyType> walker = head;
 
+		//if list is empty, cant remove
 		if(length == 0)
 			return;
 
@@ -178,7 +183,6 @@ public class DoublyLinkedList<AnyType> extends HW4_AbstractClass<AnyType>{
 		length--;
 
 	}
-
 	//---End To Do---
 
 

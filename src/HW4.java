@@ -1,5 +1,13 @@
+/**
+ * Homework 4, Summer 2018
+ *
+ * Testing a doubly linked list
+ * @author A. Smith
+ *
+ */
 public class HW4{
 
+    //Tests a doubly linked list
     public static void main(String args[]){
         //HW4 o = new HW4();
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
@@ -66,7 +74,6 @@ public class HW4{
         list.removeFromFront();
         System.out.println("-Removed-");
         list.printContents();
-
 
 
         //peekFront, peekBack, removeFromPosition
@@ -172,6 +179,34 @@ public class HW4{
         System.out.println("---Remove from empty---");
         list.removeFromPosition(1);
         list.printContents();
+
+
+        //Testing other data types
+        //---String---
+        DoublyLinkedList<String> stringList = new DoublyLinkedList<>();
+        System.out.println("---String list---");
+        stringList.addToBack("nodeA");
+        stringList.insertAtPosition("nodeB",2);
+        stringList.printContents();
+        System.out.println("Front -> " + stringList.peekFront());
+        stringList.removeFromFront();
+        stringList.removeFromBack();
+        stringList.removeFromBack();
+        stringList.printContents();
+
+        //---Float---
+        DoublyLinkedList<Double> doubleList = new DoublyLinkedList<>();
+        System.out.println("---Double list---");
+        doubleList.addToBack(2.45);
+        doubleList.insertAtPosition(6.3,2);
+        doubleList.printContents();
+        System.out.println("Back -> " + doubleList.peekBack());
+        doubleList.removeFromFront();
+        doubleList.removeFromBack();
+        doubleList.removeFromBack();
+        doubleList.printContents();
+
+        System.out.println("---End of testing---");
         //---END TESTING---
 
 
